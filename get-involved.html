@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - #AreYOUthOkay?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header same as other pages -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1 class="hashtag-logo">#AreYOUthOkay?</h1>
+                    <p class="logo-subtitle">An Imagine Citizens Network Project</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="stories.html">STORIES</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="get-involved.html" class="active">GET INVOLVED</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="get-involved-section">
+        <div class="get-involved-content">
+            <h1 class="section-title">Get Involved</h1>
+            <h2 class="section-subtitle">Shape the Future of Child and Youth Mental Health</h2>
+            
+            <div class="intro-text">
+                <p>Whether you're a patient, caregiver, health professional, educator, or simply passionate about improving child and youth mental health, your voice matters. Join us in creating meaningful change by sharing your unique insights, expertise, or lived experience.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Inform</h3>
+                    <p>Impactful programs that bridge gaps in care and education.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Empower</h3>
+                    <p>Healthcare systems to center patient and family voices.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Inspire</h3>
+                    <p>A new generation of compassionate, equity-driven professionals.</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h3>Join Our Network of Collaborators</h3>
+                <p class="form-intro">Complete the fields below to share how you'd like to collaborate. Whether through storytelling, advising, training, or advocacy, your participation will help build a future where every young person's mental health needs are seen, heard, and prioritized.</p>
+                
+                <form id="contactForm" class="contact-form" 
+                    action="mailto:simron@imaginecitizens.ca" 
+                    method="post" 
+                    enctype="text/plain"
+                >
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">I am a:</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="patient">Patient with lived experience</option>
+                            <option value="caregiver">Family member/Caregiver</option>
+                            <option value="healthcare">Healthcare professional</option>
+                            <option value="educator">Educator</option>
+                            <option value="advocate">Mental health advocate</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">I'm interested in:</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select your interest</option>
+                            <option value="storytelling">Sharing my story</option>
+                            <option value="advisory">Advisory role</option>
+                            <option value="training">Training/Education</option>
+                            <option value="advocacy">Advocacy work</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Share more about how you'd like to contribute..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer same as other pages -->
+    <footer class="site-footer">
+        <nav class="footer-nav">
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+
+            const subject = 'New Get Involved Submission';
+            const body = `
+Name: ${name}
+Email: ${email}
+Role: ${role}
+Interest: ${interest}
+Message: ${message}`;
+
+            window.location.href = `mailto:simron@imaginecitizens.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            this.reset();
+            return false;
+        });
+    </script>
+</body>
+</html> 
